@@ -5,15 +5,19 @@
 // user asked sum or product of numbers between 1 and that number
 // take the number and loop thru every number in between
 
-
+// ======================================================
 //Hepler Function for Calculating Sum
 function computeSum(targetNum){
+  //Initialize starting value
   let total = 0;
 
+  //Loop thru each num until targetNum is reached
+  //then exit the loop 
   for (let num = 1; num <= targetNum; num += 1){
+    //Add num to total for each iteration (total = total + num)
     total += num;
   }
-
+  //Return result of total
   return total;
 }
 // ======================================================
@@ -48,7 +52,7 @@ if (operation === "s") {
 } else {
   console.log("Oops. Unknown operation.");
 }
-
+// ======================================================
 
 
 // Examples:
@@ -62,3 +66,55 @@ if (operation === "s") {
 // Enter "s" to compute the sum, or "p" to compute the product. p
 
 // The product of the integers between 1 and 6 is 720.
+
+// ===========================================================================================
+// Using Reduce in array
+
+// ======================================================
+//Hepler Function for Calculating Sum
+function computeSum(targetNum){
+  //Initialize starting value
+  let total = 0;
+
+  //Loop thru each num until targetNum is reached
+  //then exit the loop 
+  for (let num = 1; num <= targetNum; num += 1){
+    //Add num to total for each iteration (total = total + num)
+    total += num;
+  }
+  //Return result of total
+  return total;
+}
+// ======================================================
+//Hepler Function for Calculating Product
+function computeProduct(targetNum){
+  let total = 1;
+
+  for (let num = 1; num <= targetNum; num += 1){
+    total *= num
+  }
+
+  return total;
+}
+// ======================================================
+// Get user prompts
+let readlineSync = require("readline-sync")
+
+console.log("Please enter an integer greater than 0");
+let number = parseInt(readlineSync.prompt(), 10);
+
+console.log("Enter 's' to compute the sum, 'p' to compute the product.");
+let operation = readlineSync.prompt();
+
+if (operation === "s") {
+  let sum = computeSum(number);
+  console.log(`The sum of the integers between 1 and ${number} is ${sum}.`);
+} else if (operation === "p") {
+  let product = computeProduct(number);
+  console.log(
+    `The product of the integers between 1 and ${number} is ${product}.`
+  );
+} else {
+  console.log("Oops. Unknown operation.");
+}
+// ======================================================
