@@ -18,13 +18,13 @@
 //   return crunchText;
 // }
 
-// // function crunch(params) {
-// //   return params.replace(/[^\w\s]|(.)(?=\1)/gi, "");
-// // }
+function crunch(params) {
+  return params.replace(/[^\w\s]|(.)(?=\1)/gi, "");
+}
 
 // // Examples:
 
-// console.log(crunch('ddaaiillyy ddoouubbllee'));    // "daily double"
+console.log(crunch('ddaaiillyy ddoouubbllee'));    // "daily double"
 // crunch('4444abcabccba');              // "4abcabcba"
 // crunch('ggggggggggggggg');            // "g"
 // crunch('a');                          // "a"
