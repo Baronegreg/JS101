@@ -181,11 +181,33 @@
 // // numbers.length = 0
 // console.log(numbers)
 
-isColorRed = (color) => {
-  color === 'red';
+
+
+// =======================================================================================
+function isColorValid(color) {
+  if (color === "blue" || color === "green") {
+    return true;
+  } else {
+    return false;
+  }
 }
 
-function isColorValid(color) {
-  if (isColorRed || color === "blue" || color === "green");
-}
-  console.log(isColorValid('red'))
+// This can have one return statement
+
+  function isColorValid(color) {
+    return color === "blue" || color === "green";
+  }
+
+  // In functions that return a boolean value, you often don't need separate return statements for the true and false cases. 
+  // Instead, you can return the value of a conditional expression directly.
+  
+  // We can also use an arrow function to simplify the code even more:
+  
+  const isColorValid = color => color === "blue" || color === "green";
+  
+  // Another tweak you can make is to use the Array.prototype.includes method; 
+  // this works especially well when you have more than 2 choices:
+  
+
+  const isColorValid = color => ["blue", "green"].includes(color);
+  // =======================================================================================
