@@ -14,13 +14,48 @@
 
 // Examples:
 
-function getGrade(grade1, grade2, grade3) {
-  console.log(grade1,grade2,grade3 )
-}
+// function getGrade(grade1, grade2, grade3) {
+//   let average = (grade1 + grade2 + grade3) / 3;
+
+//   if (average >= 90 && average <= 100) {
+//     return 'A';
+//   } else if (average >= 80 && average < 90) {
+//     return 'B';
+//   } else if (average >= 70 && average < 80) {
+//     return 'C';
+//   } else if (average >= 60 && average < 70) {
+//     return 'D';
+//   } else {
+//     return 'F';
+//   }
+// }
+
+
+// Good use of CONVERSION TABLE:
+// const GRADES = {
+//   90: "A",
+//   80: "B",
+//   70: "C",
+//   60: "D",
+//   50: "F"
+// };
+
+// function getGrade(num1, num2, num3) {
+//   let meanScore = Math.floor((num1 + num2 + num3) / 3);
+//   let roundedScore = meanScore - (meanScore % 10);
+//   return roundedScore <= 50 ? GRADES["50"] : GRADES[roundedScore.toFixed(0)];
+// }
+  
+  function getGrade(...grades){
+    let average = grades.reduce((acc, cur) => acc + cur, 0) / grades.length;
+    if (average >= 90) return 'A';
+    if (average >= 80) return 'B';
+    if (average >= 70) return 'C';
+    if (average >= 60) return 'D';
+    return 'F';
+  }
 
 
 
-
-
-getGrade(95, 90, 93);    // "A"
-getGrade(50, 50, 95);    // "D"
+console.log(getGrade(95, 90, 93));    // "A"
+console.log(getGrade(50, 50, 95));    // "D"
